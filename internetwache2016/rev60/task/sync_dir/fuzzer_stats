@@ -1,0 +1,25 @@
+start_time     : 1455987766
+last_update    : 1455987936
+fuzzer_pid     : 13339
+cycles_done    : 29
+execs_done     : 146225
+execs_per_sec  : 821.39
+paths_total    : 1
+paths_favored  : 1
+paths_found    : 0
+paths_imported : 0
+max_depth      : 1
+cur_path       : 0
+pending_favs   : 0
+pending_total  : 0
+variable_paths : 0
+bitmap_cvg     : 0.08%
+unique_crashes : 0
+unique_hangs   : 0
+last_path      : 0
+last_crash     : 0
+last_hang      : 0
+exec_timeout   : 20
+afl_banner     : filechecker
+afl_version    : 1.96b
+command_line   : /opt/afl-1.96b/afl-fuzz -Q -i indir/ -o sync_dir ./filechecker -f .password

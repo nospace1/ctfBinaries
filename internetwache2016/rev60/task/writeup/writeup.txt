@@ -1,0 +1,27 @@
+the program will fail immediately upon running
+
+it will say file not found
+
+rabin -z filechecker
+
+shows the strings
+
+[strings]
+addr=0x004008d9 off=0x000008d9 ordinal=000 sz=34 section=.rodata string=Fatal error: File does not existr
+addr=0x004008fb off=0x000008fb ordinal=001 sz=10 section=.rodata string=.password
+addr=0x00400905 off=0x00000905 ordinal=002 sz=27 section=.rodata string=Error: Could not read file
+addr=0x00400920 off=0x00000920 ordinal=003 sz=24 section=.rodata string=Error: Wrong characters
+addr=0x00400938 off=0x00000938 ordinal=004 sz=10 section=.rodata string=Congrats!
+
+
+r2 -d filechecker
+aa
+pdf@main
+
+.password is loaded into memory before fopen is called.
+
+it's safe to assume it's looking for a file called .password, from which it will read from.
+
+upon creating the file it no longer complains about not being able to find the file.
+
+

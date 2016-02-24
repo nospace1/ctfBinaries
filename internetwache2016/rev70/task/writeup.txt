@@ -1,0 +1,35 @@
+had to use qemu-arm
+
+had to install gdb-multiarch
+
+used command:
+    qemu-arm -L /usr/arm-linux-gnueabihf/ -g 1234 serverfarm
+
+used command:
+    gdb-multiarch -q -nx
+
+gdb command:
+    file serverfarm
+    set architecture arm
+    target remote localhost:1234 AAAA
+
+knowing it will fail when the comparison of r2 > r3 is not true
+we can modify the value of r2 to ensure that it progresses to the next block
+
+if the comparison is true, usually done by setting r2 to a value higher than r3 everytime,
+I can progress to the next block.
+
+afterwards I watch for when comparisons are done with my input to values predetermined within the program.
+
+comparisons to 0x23, 0x41, an 0x0 are made at crucial points
+
+when it is correctly compared you get a chunk of the flag at a time.
+
+I didn't really understand everything that was happening but I was able to understand at what points to progress and how to make the
+program progress into the direction I wanted while giving it "correct" inputs.
+
+flag = IW{S.E.R.V.E.R>=F:A:R:M}
+
+
+
+
